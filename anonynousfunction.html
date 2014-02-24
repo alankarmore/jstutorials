@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Test Title</title>
+	<script type="text/javascript">
+		var animals = [
+			{ 
+				species: "Lion", 
+				name: "King"
+			},
+			{ 
+				species: "Whale", 
+				name: "Fail"
+			},
+		];
+
+		// getting length of the animals record 
+		var len = animals.length;
+
+		for (var i = len - 1 ; i >= 0; i--) {
+			(function(i){
+				this.print = function () {
+					console.log("#" + i + " " + this.species + " " + this.name);
+				}
+
+				this.print();
+			}).call(animals[i], i);
+		};
+	</script>
+</head>
+<body>
+	 <h1> Creating and Executing Anonymous functions in Javascript  </h1>
+</body>
+</html>

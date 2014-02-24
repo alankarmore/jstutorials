@@ -1,0 +1,117 @@
+<html>
+<head>
+	<title>Test Title</title>
+	<script type="text/javascript">
+
+		var image_1 = new Image();
+		var image_2 = new Image();
+		var image_3 = new Image();
+		var image_4 = new Image();
+		var image_5 = new Image();
+
+		image_1.src = "image_scroll/pic_1.jpg";
+		image_2.src = "image_scroll/pic_2.jpg";
+		image_3.src = "image_scroll/pic_3.jpg";
+		image_4.src = "image_scroll/pic_4.jpg";
+		image_5.src = "image_scroll/pic_5.jpg";
+
+		// creating an array of image objects 
+		var imageArray = new Array(image_1, image_2, image_3, image_4, image_5);
+
+		// iterating counter 
+		var counter = 0;
+
+		// total count of images 
+		var endOfImages = imageArray.length - 1;
+
+		// function to scroll image in forward direction
+		function scrollForward() {
+			if (counter == endOfImages) {
+				// forward and backward arrows 
+				var fArrow = document.getElementById("forwardArrow");
+				var bArrow = document.getElementById("backwardArrow");				
+
+				fArrow.style.display = 'none';	
+				bArrow.style.display = 'block';	
+			} else {
+				counter++;
+			}
+
+			document.image1.src = imageArray[counter].src;
+		}
+
+		// function to scroll image in backward direction
+		function scrollBackward() {
+			if (counter == 0) {
+				// forward and backward arrows 
+				var fArrow = document.getElementById("forwardArrow");
+				var bArrow = document.getElementById("backwardArrow");				
+
+				fArrow.style.display = 'block';	
+				bArrow.style.display = 'none';	
+			} else {
+				counter--;
+			}
+
+			document.image1.src = imageArray[counter].src;
+		}
+
+		/**************** Timer ***************************/
+		var flip = false;
+
+		function pics() {
+
+			if (counter == endOfImages) {
+				counter = 0;
+			} else {
+				counter++;
+			}
+
+			var img1 = document.getElementById("img1");
+			img1.src = imageArray[counter].src;
+
+			/*			
+			if (flip == false) {
+				document.getElementById("img1").src = image_5.src;
+			} else {
+				document.getElementById("img1").src = image_1.src;
+			}
+			
+			flip = !flip; */
+		}
+
+		function timer() {
+			animation = setInterval("pics()", 1000);
+		}
+
+		function stopTimer() {
+			clearInterval(animation);
+		}
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td height="200" width="100" id="backwardArrow">
+				<img src="image_scroll/back.gif" onclick="scrollBackward();" />
+			</td>
+			<td width="300">
+				<img src="image_scroll/pic_1.jpg" name="image1"/>
+			</td>
+			<td width="100" id="forwardArrow">
+				<img src="image_scroll/forward.gif" onclick="scrollForward();"/>
+			</td>
+		</tr>
+
+		<tr>
+			<td width="300">
+				<img src="image_scroll/pic_1.jpg" id="img1"/>
+			</td>
+			<td width="100" >
+				<input type="button" name="go" id="go" onclick="timer();" value="Go" />
+				<input type="button" name="stop" id="stop" onclick="stopTimer();" value="Stop" />
+			</td>
+		</tr>		
+	</table>
+</body>
+</html>

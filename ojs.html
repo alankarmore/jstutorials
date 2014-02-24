@@ -1,0 +1,65 @@
+<html>
+<head>
+	<title>Test Title</title>
+	<script type="text/javascript">
+// creation of class in javascript ( As prototyped based language no class keyword is used );	
+function Person(name, gender) {
+	this.name = name;
+	this.gender = gender;
+}
+
+// methods which are going to oeprate on object.
+Person.prototype.saySomething =  function () {
+	alert("Hi my name is " +  this.name + " and my gender is " + this.gender);
+};
+
+// another function adding in class Person
+Person.prototype.walking = function () {
+	alert(" I am walking ");
+};
+
+// creation of objects 
+var malePerson = new Person('abc', 'Male');
+var femalePerson = new Person('xyz', 'Female');
+
+// calling of object methods on respective objects. 
+malePerson.saySomething();
+femalePerson.saySomething();
+
+
+// INHERITANCE 
+function Student(name, gender) {
+	// call the person constructor 
+	Person.call(this, name, gender);
+};
+
+// inheriting all properties and methods from the Person class 
+Student.prototype = new Person();
+
+// correcting the constructor as it is default pointing to the Person
+Student.prototype.constructor = Student;
+
+// overriding methods if we want
+Student.prototype.saySomething = function () {
+	document.write(" <br/> I am student and my name is " +  this.name + " and I my gender is :" 
+		+ this.gender);
+};
+
+// Student class own mthods 
+Student.prototype.sayHello = function () {
+	document.write( " <br/> Hello Everyone !!!!!");
+};
+
+
+// Now creating the object of Student class 
+var student1 = new Student("StudentName", "Male");
+student1.saySomething();
+student1.sayHello();
+student1.walking();
+
+	</script>
+</head>
+<body>
+	 <h1> Object Oriented JS </h1>
+</body>
+</html>
