@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>History Object: </title>
+	</head>
+	<body>
+		<div>
+			<input type="button" name="getHistoryObject" id="getHistoryObject" 
+			value="Get History Object">
+			<input type="button" name="getLength" id="getLength" value="Get Length" />
+		</div>
+
+		<div>
+			<input type="button" name="back" id="back" value="Go Back" />
+			<input type="button" name="forward" id="forward" value="Go Forward" />
+			<input type="button" name="pushstate" id="pushstate" value="Push State" />
+		</div>
+		<div id="message">
+			<i>For moving backward and forward with history object 
+			you can use back() or forward() methods 
+			or you can simply use go(1) for forward or go(-1) for backward.</i>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// To get history object
+		var hButton = document.getElementById("getHistoryObject");
+		var message = document.getElementById("message");
+		var historyObject;
+		hButton.onclick = function () {
+			historyObject = window.history;
+			alert("Got:" + window.history);
+
+		};
+
+		// to go back one page 
+		var backBtn = document.getElementById("back");
+		backBtn.onclick = function () {
+			//historyObject.back();
+			historyObject.go(-1);
+		};
+
+		// to go forward one page 
+		var forwardBtn = document.getElementById("forward");
+		forwardBtn.onclick = function () {
+			historyObject.forward();
+			//historyObject.go(1);
+		};	
+
+		// get history length do you have 
+		var lenBtn = document.getElementById("getLength");
+		lenBtn.onclick = function () {
+			alert(historyObject.length);
+		};	
+
+		// for adding new entry in history list 
+		var pushBtn = document.getElementById("pushstate");
+		pushBtn.onclick = function () {
+			var stateObj = { foo: "bar" };
+			historyObject.pushState(stateObj, "page 2", "");
+		};
+	</script>
+</html>

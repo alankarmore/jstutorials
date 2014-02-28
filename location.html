@@ -1,0 +1,122 @@
+<html>
+<head>
+	<title>BOM : Location Object</title>
+</head>
+<body>
+	<div>
+		<input type="button" name="newWindow" id="newWindow" value="Open New Window" />
+		<input type="button" name="closeWindow" id="closeWindow" value="Close Window" />
+	</div>
+	<div>
+		<span> Click to see your current Location </span>
+		<input type="button" name="currentLocation" id="currentLocation" 
+		value="Show Current Location" />
+		<span id="message"></span>
+	</div>
+
+	<div>
+		<span>Please tell us about new location</span>
+		<input type="text" name="newLocation" id="newLocation" value="http://www.google.com" />
+		<input type="button" name="changeLocation" id="changeLocation" 
+		value="Change Location" />
+	</div>
+
+	<div>
+		<span>Please reload my page</span>
+		<input type="button" name="reloadLocation" id="reloadLocation" 
+		value="Reload Location" />
+	</div>	
+
+	<div>
+		<span>Replacing page</span>
+		<input type="button" name="replacePage" id="replacePage" 
+		value="Replace Page" />
+	</div>		
+
+	<div>
+		<span>Click to print.</span>
+		<input type="button" name="printThisPage" id="printThisPage" value="Print This Page" />
+	</div>
+	<div>
+		<span>Click button to move window</span>
+		<input type="button" onClick="move();" value="Move to the right">
+	</div>
+
+	<div>
+		<ul>
+			Other Methods:
+			<li>resizeTo()</li>
+		</ul>
+		<font color="red"> 
+		--- :NOTES: ---  <br/>
+		Since Firefox 7, it's no longer possible for a web site to move a window in a browser,
+		<br/>according to the following rules: <br/><br/>
+		You can't move a window or tab that wasn't created by window.open.<br/>
+		You can't move a window or tab when it's in a window with more than one tab.
+		</font>
+	</div>
+</body>
+	<script type="text/javascript">
+
+		var window1;	
+		// open new window on button click 
+		var openWindow = document.getElementById('newWindow');
+		openWindow.onclick = function () {
+			 window1 = window.open(window.location, 
+			 					   "google", 
+			 					   "width=300,height=400");
+			// window1.moveTo(50,50);
+		};	
+
+		// function to move window with given coordinates 
+		function move() {
+			window1.moveTo(window1.screenX + 50, window1.screenX + 50);
+		}
+
+		// close window on button click 
+		var closeWindow = document.getElementById("closeWindow");
+		closeWindow.onclick = function () {
+			window1.close();
+		};
+
+		//  To see current location
+		var message = document.getElementById("message");
+		var cLocation = document.getElementById("currentLocation");
+		cLocation.onclick = function () {
+			message.innerHTML = window.location;
+		};
+
+		// To change the location of window object
+		var changLocation = document.getElementById("changeLocation");
+		changLocation.onclick = function () {
+			var newLocation = document.getElementById("newLocation").value;
+			window.location = newLocation;
+			//window.location.href = newLocation;
+			//window.location.assign(newLocation);
+		};
+
+		// to reload page forcefully 
+		var reloadLocation = document.getElementById("reloadLocation");
+		reloadLocation.onclick = function () {
+			window.location.reload(true);
+		};
+
+
+		// By using the method replace page 
+		/**
+		*
+		* Loads give url in browser and overwrites the most 
+		* recent history entry with it.
+		* 
+		*/
+		var replacePage = document.getElementById("replacePage");
+		replacePage.onclick = function () {
+			window.location.replace("http://www.yahoo.com");
+		};
+
+		var printPage = document.getElementById("printThisPage");
+		printPage.onclick = function () {
+			window.print();
+		};
+	</script>
+</html>

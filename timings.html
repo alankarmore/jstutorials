@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<title>setInterval && clearInterval</title>
+		<style type="text/css">
+		  #wrapper {width: 600px;height: 500px;}	
+		  .container {background-color: red; width: 50px; height: 50px; position: absolute;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<input type="button" name="moveRightDiv" id="moveRightDiv" value="Move To Right" />
+			<input type="button" name="moveLeftDiv" id="moveLeftDiv" value="Move To Left" />
+			<input type="button" name="moveDownDiv" id="moveDownDiv" value="Move To Down" />
+			<input type="button" name="moveUpDiv" id="moveUpDiv" value="Move To Up" />
+			<input type="button" name="stopBtn" id="stopBtn" value="Stop Button" />
+		</div>	
+		<div id="wrapper">
+			<div class="container" id="container">&nbsp;</div>
+		</div>
+		<div id="msg"></div>
+	</body>
+	<script type="text/javascript">
+	// getting input buttons from the document.
+	var wrapper      = document.getElementById("wrapper");
+	var moveRightBtn = document.getElementById("moveRightDiv");
+	var moveLeftBtn  = document.getElementById("moveLeftDiv");
+	var moveDownBtn  = document.getElementById("moveDownDiv");
+	var moveUpBtn    = document.getElementById("moveUpDiv");
+	var stopBtn      = document.getElementById("stopBtn");
+
+	// getting container height and width which is animating.
+	var container = document.getElementById("container");
+	var width     = wrapper.offsetWidth;
+	var height    = wrapper.offsetHeight;
+	var top       = container.offsetTop;
+	
+
+	// declaring variables to store intervals
+	var divMoveRightInterval; // for moving right
+	var divMoveLeftInterval;  // for moving left
+	var divMoveDownInterval; // for moving down
+	var divMoveUpInterval; // for moving upward
+
+	// Increasing left of current animated div 
+	function moveSide(left) {	
+		container.style.left = left + "px";
+	}
+
+	// Moving DIV up and down 
+	function moveUpDown(top) {
+		container.style.top = top + "px";
+	}
+
+	// moving DIV to right side
+	function moveToRight() {
+		var t = container.offsetLeft + 10; 
+		if ( t > width) {
+			container.style.background = "green";
+			clearInterval(divMoveRightInterval);	
+		}	
+		moveSide(t);		
+	}
+
+	// moving div to left side
+	function moveToLeft() {
+		var t = container.offsetLeft - 10; 
+		if ( t == 8) {
+			container.style.background = "yellow";
+			clearInterval(divMoveLeft);	
+		}	
+		moveSide(t);		
+	}	
+
+
+	// moving div to downward 
+	function moveToDown() {
+		var t = container.offsetTop + 10;
+		if ( t > height) {
+			container.style.background = "yellow";
+			clearInterval(divMoveDownInterval);	
+		}	
+		moveUpDown(t);	
+	}
+
+	// moving div to upward 
+	function moveToUp() {
+		var t = container.offsetTop - 10;
+		if ( t <= 34) {
+			container.style.background = "yellow";
+			clearInterval(divMoveUpInterval);	
+		}	
+		moveUpDown(t);	
+	}
+
+	// Right button click function 
+	moveRightBtn.onclick = function () {
+		divMoveRightInterval = setInterval("moveToRight()", 100);
+	};
+
+	// Left button click function 
+	moveLeftBtn.onclick = function () {
+		divMoveLeftInterval = setInterval("moveToLeft()", 100);
+	};	
+
+	// down button click function
+	moveDownBtn.onclick = function () {
+		divMoveDownInterval = setInterval("moveToDown()",100);
+	};
+
+	// up button click function
+	moveUpBtn.onclick = function () {
+		divMoveUpInterval = setInterval("moveToUp()",100);
+	};
+
+	stopBtn.onclick = function () {
+		clearInterval(divMoveRightInterval);	
+		clearInterval(divMoveLeftInterval);	
+		clearInterval(divMoveDownInterval);	
+		clearInterval(divMoveUpInterval);	
+	}	
+	</script>
+</html>
