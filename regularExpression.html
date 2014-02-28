@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title>
+		Using Regular Expressions in Javascripts
+	</title>
+	<style type="text/css">
+		#testContent {width: 1000px; height: 500px;margin-top:50px;}
+	</style>
+</head>
+<body>
+<center>
+	<div>
+	<font color="orange">Enter your regular expression and test your regex here only !!!.</font><br/>
+	<input type="text" name="textRegex" id="textRegex" value=""  />
+	<input type="button" name="testRegex" id="testRegex" value="Search This Word"  />
+	</div>
+	<div id="testcontent">
+
+		<p id="content2"></p>			
+		<p id="content1">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut leo in leo tristique gravida placerat vitae libero. Sed aliquet in nibh at pulvinar. Nam aliquet consequat lectus, eget tincidunt urna. Aenean convallis quis ante sed egestas. Morbi condimentum accumsan euismod. Donec id tempor risus, varius euismod dolor. Nam purus mi, faucibus quis tempus at, adipiscing non risus. Quisque rhoncus eget enim non gravida. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam pellentesque justo a ante hendrerit interdum. Phasellus volutpat eget elit vel varius.
+<br/><br/>
+Maecenas porta, ligula sit amet pellentesque euismod, ante ipsum pharetra augue, id posuere tellus nisi quis augue. Mauris laoreet dictum ornare. Aenean non nunc et odio tempus placerat eget at erat. Phasellus a luctus neque. Aliquam in nisi eu nisl dapibus porttitor quis lacinia massa. Donec porta tortor vitae tellus faucibus, sit amet sodales dui vehicula. Nunc sollicitudin faucibus orci, in volutpat augue condimentum at. Integer et sapien faucibus lacus varius pulvinar in porttitor neque. Nullam lobortis est sit amet erat tristique, in bibendum lorem sagittis. Donec est ipsum, dignissim ut felis ac, commodo venenatis eros. Suspendisse id dui tincidunt, gravida turpis sit amet, laoreet nisi. Mauris viverra, mauris ut imperdiet elementum, metus justo tincidunt enim, vel mollis quam ante id libero. Aliquam ut justo nec quam tincidunt vehicula non nec ante. Suspendisse orci tortor, rhoncus et purus at, condimentum imperdiet augue.
+<br/><br/>
+Vivamus purus libero, pharetra ornare nulla eget, semper hendrerit turpis. Mauris nibh ligula, posuere quis urna nec, lacinia accumsan lorem. Cras non pretium justo. Ut iaculis tristique mi at mollis. Sed sit amet pretium sem. Morbi facilisis varius risus eget tempus. Vivamus placerat libero blandit diam varius, a varius dolor adipiscing. In laoreet tellus dolor, scelerisque congue nibh pretium eget. Etiam libero magna, eleifend quis lacus mattis, porta egestas nibh. Praesent scelerisque, enim sit amet aliquam ultricies, quam arcu egestas magna, quis ullamcorper metus lorem eget nunc. Aliquam dui sapien, feugiat sed nulla sit amet, rhoncus luctus ipsum. Sed tincidunt viverra diam a varius. Quisque at ipsum ultricies justo interdum varius. Sed pretium porttitor tempor.
+<br/><br/>
+Aliquam tristique malesuada tristique. Cras pulvinar tellus a leo facilisis faucibus. Fusce tincidunt nibh mi, et ullamcorper urna suscipit non. Duis adipiscing enim at mi tristique tempus ut quis enim. Sed id sagittis mauris. Nullam pellentesque lorem quis mi auctor tincidunt. Praesent convallis purus id lacinia condimentum. Duis dui enim, vehicula et pharetra sed, tristique in turpis. Aliquam sit amet lectus aliquet, iaculis augue in, tempus odio.
+<br/><br/>
+Fusce ac adipiscing mauris. Etiam egestas lectus lacus, at semper odio iaculis in. Proin lacus turpis, pharetra non leo et, adipiscing congue nulla. Curabitur interdum auctor rhoncus. Cras scelerisque mauris eu purus dictum, ut blandit augue aliquam. Vestibulum ut posuere mauris. Morbi et felis elit. Nullam et suscipit orci. Ut blandit sagittis nibh, ut gravida enim posuere sit amet.
+<br/><br/>
+Vestibulum tellus orci, laoreet ac eros vel, facilisis suscipit ipsum. In nec magna justo. In a tortor libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras dapibus vehicula odio eu mollis. Cras quis sollicitudin ante, a volutpat felis. Nam vestibulum et elit eu tempor. Nullam mollis nisl risus, sit amet facilisis metus dictum a. Etiam in dui eget eros dignissim interdum ut eget ligula. Morbi eget iaculis est, eu viverra nibh. Etiam dui nisi, aliquam id massa eget, pretium facilisis nibh. Praesent sollicitudin, nulla quis eleifend vulputate, mauris risus porta dolor, sit amet tempor ante elit vitae sapien. Cras in metus id diam convallis fringilla ut rutrum dui. Pellentesque vel nulla ligula. Sed quam mauris, suscipit ut risus et, condimentum viverra mi. Etiam arcu erat, sagittis nec eros vitae, commodo laoreet libero.
+<br/><br/>
+In bibendum tortor nec erat varius, ac pulvinar sem tristique. Duis lorem orci, viverra vitae iaculis quis, ultricies a sapien. Proin est ligula, vestibulum at lorem sit amet, mollis molestie massa. Sed ullamcorper eros vulputate lacinia vehicula. Praesent ac erat a justo aliquet dignissim. Nam laoreet risus id purus aliquet, id porta libero semper. Proin scelerisque dolor ornare ultricies porttitor. Morbi imperdiet arcu ac dapibus ultrices.
+<br/><br/>
+Ut tincidunt lobortis mi quis mattis. Mauris nec ipsum quam. Morbi ut pulvinar velit, vel auctor sem. Fusce scelerisque, ante eu euismod lobortis, neque mi porta nisi, et hendrerit magna urna id ligula. Phasellus nulla magna, vulputate et dictum sit amet, volutpat quis ante. Proin odio mauris, fringilla ut ultrices non, scelerisque ac est. Morbi pretium non lectus ut porttitor. Vestibulum mollis dolor arcu, at feugiat lacus faucibus ut. In adipiscing arcu eu urna elementum consectetur. Vivamus scelerisque ac erat sit amet rhoncus. Aenean volutpat aliquet enim vitae sagittis. Sed tristique ultricies hendrerit. Mauris in dolor congue, dapibus turpis sed, vehicula justo. Quisque nisi turpis, mattis vitae orci sit amet, condimentum iaculis orci.
+<br/><br/>
+Quisque et venenatis nibh, eu sagittis augue. Suspendisse gravida feugiat urna, sit amet aliquam massa vulputate vitae. Fusce et adipiscing odio, et porttitor tellus. Nam non mauris erat. Donec aliquet sapien ut magna pellentesque semper. Quisque interdum tempus nunc id imperdiet. Etiam a sem lectus. Integer consectetur turpis in nunc pretium, ac tempus sem pulvinar. Proin tristique erat eu enim lobortis, quis vestibulum enim cursus. Donec dignissim venenatis ipsum nec lacinia. Donec eu metus et urna dapibus sodales nec dictum lorem. Duis nec egestas urna, sed molestie nulla. Aliquam pellentesque posuere ultricies.
+<br/><br/>
+Vestibulum a sodales sapien. Nam a imperdiet nibh. Cras a tempor libero, rhoncus imperdiet orci. Mauris commodo turpis non ipsum iaculis ultricies. Quisque quis vehicula nunc, ut suscipit turpis. Praesent auctor convallis dui eget venenatis. Nulla id mi diam. Integer ultricies sem id ultricies tempor. Pellentesque sed quam dapibus, gravida risus vel, volutpat felis.
+<br/><br/>
+Fusce elit felis, vehicula sit amet turpis nec, placerat malesuada magna. Vivamus scelerisque convallis lorem, quis bibendum ligula faucibus sit amet. Ut vel imperdiet libero, non elementum nisl. Ut ultrices nec libero ut vulputate. In est ante, fermentum sed tellus ut, lobortis faucibus elit. Nullam accumsan non lorem sed faucibus. Nunc quis dignissim nisl. Maecenas arcu dolor, tempus at libero sit amet, porttitor sollicitudin quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla elementum leo sodales leo lacinia, et blandit orci posuere. Proin id metus sit amet risus mollis tincidunt at in tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi commodo libero tristique felis pulvinar, sed rutrum eros aliquet.
+<br/><br/>
+Ut tellus nibh, tincidunt in dolor facilisis, mattis volutpat ipsum. Curabitur feugiat tincidunt nulla, ac rhoncus dui. Ut adipiscing placerat sodales. Mauris semper urna arcu, vel mollis nisi hendrerit ut. Cras sed convallis dolor. Proin condimentum rutrum quam accumsan tristique. Maecenas sed libero tempor, viverra urna fringilla, posuere orci. Aenean consectetur aliquet mauris nec blandit. Vivamus laoreet purus augue, vel dapibus nunc semper ut. Phasellus varius luctus tellus, egestas adipiscing tellus elementum eu. In hac habitasse platea dictumst. Praesent imperdiet eu urna a sollicitudin. Sed eget nibh non nibh auctor scelerisque.
+<br/><br/>
+In pretium metus suscipit turpis dignissim, ut consequat turpis tempor. Phasellus tempus ipsum eu dui vehicula, vitae sodales ligula ullamcorper. Donec lacus justo, porta sed imperdiet eleifend, blandit ut mi. Cras placerat mauris pellentesque dui aliquam volutpat. Aliquam sit amet metus ac nulla pretium lobortis. Aliquam condimentum, massa nec pellentesque consectetur, arcu diam consequat turpis, id blandit risus dui blandit tellus. Etiam sollicitudin imperdiet elit ac dignissim. Fusce tempor lobortis leo, pharetra scelerisque nisi faucibus at. Maecenas a mattis purus. Integer interdum lacus eu iaculis convallis. Donec mattis, nisl in semper posuere, enim magna tempor leo, et congue risus diam non nisl. Cras malesuada, odio at interdum fermentum, sapien felis lacinia odio, a blandit elit dui sit amet nulla. Ut condimentum elit id purus euismod laoreet. Cras ut adipiscing nunc, eget mattis sem.
+<br/><br/>
+In hac habitasse platea dictumst. Fusce fringilla nibh sit amet dui dignissim gravida. Suspendisse ut sapien non sapien mollis facilisis. Morbi non dui ut lorem molestie mattis. Praesent semper, est in tempor vehicula, risus sapien congue lorem, tristique facilisis magna arcu eget tortor. In dignissim tellus vitae eros pretium, at interdum turpis varius. Ut a porttitor mi.
+<br/><br/>
+Aliquam erat volutpat. Sed tortor neque, commodo in erat sit amet, imperdiet eleifend mi. Aliquam pharetra velit a arcu gravida aliquet. Phasellus ornare cursus mi eget suscipit. Phasellus sapien lectus, fringilla eu metus a, accumsan laoreet urna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam ut turpis semper, faucibus enim pharetra, blandit elit. Donec vitae tincidunt massa, non iaculis urna. Vestibulum vulputate purus in volutpat accumsan. In hac habitasse platea dictumst. Proin commodo nisl ac massa elementum, sed placerat risus  	
+		</p>
+	</div>
+</center>	
+</body>
+<script type="text/javascript">
+
+	var userRegex =  document.getElementById("textRegex");
+	var btnTestRegex =  document.getElementById("testRegex");
+	var stringToTest = document.getElementById("content1").innerHTML;
+var str;
+	btnTestRegex.onclick = function() {
+		pattern = userRegex.value;
+		var regexObj = new RegExp(pattern, "g");
+		var matchedArray = stringToTest.match(regexObj);
+		var str = stringToTest.replace(regexObj, '<span style="background-color:yellow;">'+ userRegex.value +'</span>');
+		document.getElementById("content1").innerHTML = str;
+		document.getElementById("content2").innerHTML = "Occurance :" + matchedArray.length;
+	};
+</script>
+</html>
